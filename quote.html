@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Request a Quote – PBSA Logistics</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="PBSA Logistics" width="150" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Montserrat;font-weight:700;font-size:1.5rem;color:#D4A843;background:#1A2A3A;padding:8px 20px;border-radius:8px;\'>PBSA Logistics</span>'"/>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="accreditations.html">Accreditations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="quote.html" class="cta-nav active">Get a Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero scroll-reveal">
+        <div class="container">
+            <h1>Request a Quote</h1>
+            <p>Get Your Free Transport Quote Today</p>
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="quote-section scroll-reveal">
+        <div class="container quote-flex">
+            <!-- Form -->
+            <div class="quote-form">
+                <h2>Tell Us About Your Shipment</h2>
+                <p>Complete the form below and we'll respond with a competitive quote within 24 hours.</p>
+
+                <form id="quoteForm">
+                    <!-- Personal -->
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="emailQuote">Email Address *</label>
+                            <input type="email" id="emailQuote" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phoneQuote">Phone Number *</label>
+                            <input type="tel" id="phoneQuote" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" />
+                        </div>
+                    </div>
+
+                    <!-- Shipment -->
+                    <h3>Shipment Details</h3>
+                    <div class="form-group">
+                        <label for="origin">Origin *</label>
+                        <input type="text" id="origin" placeholder="e.g., Johannesburg, Gauteng" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination *</label>
+                        <input type="text" id="destination" placeholder="e.g., Durban, KwaZulu-Natal" required />
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickupDate">Pickup Date *</label>
+                            <input type="date" id="pickupDate" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="deliveryDate">Delivery Date</label>
+                            <input type="date" id="deliveryDate" />
+                        </div>
+                    </div>
+
+                    <!-- Cargo -->
+                    <h3>Cargo Details</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cargoType">Cargo Type *</label>
+                            <select id="cargoType" required>
+                                <option value="general">General</option>
+                                <option value="perishable">Perishable</option>
+                                <option value="hazardous">Hazardous</option>
+                                <option value="fragile">Fragile</option>
+                                <option value="oversized">Oversized</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg) *</label>
+                            <input type="number" id="weight" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="length">Length (cm)</label>
+                            <input type="number" id="length" />
+                        </div>
+                        <div class="form-group">
+                            <label for="width">Width (cm)</label>
+                            <input type="number" id="width" />
+                        </div>
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pallets">Number of Pallets</label>
+                        <input type="number" id="pallets" />
+                    </div>
+
+                    <!-- Requirements -->
+                    <h3>Special Requirements</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" /> Temperature Controlled</label>
+                        <label><input type="checkbox" /> Insurance Required</label>
+                        <label><input type="checkbox" /> Tailgate Lift Required</label>
+                        <label><input type="checkbox" /> Tracking Required</label>
+                    </div>
+
+                    <!-- Additional -->
+                    <h3>Additional Information</h3>
+                    <div class="form-group">
+                        <label for="instructions">Special Instructions</label>
+                        <textarea id="instructions" rows="4" placeholder="Any special requirements or notes..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredContact">Preferred Contact Method</label>
+                        <select id="preferredContact">
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="whatsapp">WhatsApp</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-glow btn-large">Submit Quote Request</button>
+                    <p class="form-note"><i class="fas fa-clock"></i> We'll respond within 24 hours</p>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="quote-sidebar">
+                <h3>Why Choose Us</h3>
+                <div class="sidebar-item">
+                    <i class="fas fa-medal"></i>
+                    <div>
+                        <h4>Level 1 B-BBEE</h4>
+                        <p>135% procurement recognition for your business</p>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h4>RTMS Accredited</h4>
+                        <p>Safety and quality guaranteed</p>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <div>
+                        <h4>Competitive Rates</h4>
+                        <p>Best value for your transport needs</p>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Reliable Service</h4>
+                        <p>On-time delivery guaranteed</p>
+                    </div>
+                </div>
+                <div class="sidebar-testimonial">
+                    <p>"PBSA Logistics delivered our goods on time and in perfect condition. Highly recommended!"</p>
+                    <span>– John Smith, ABC Trading</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="PBSA Logistics" width="150" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Montserrat;font-weight:700;font-size:1.5rem;color:#D4A843;\'>PBSA Logistics</span>'"/>
+                </a>
+                <p class="tagline">Reliable Logistics. Trusted Transport.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="accreditations.html">Accreditations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone"></i> 011 555 0192</p>
+                <p><i class="fas fa-envelope"></i> info@pbsalogistics.co.za</p>
+                <p><i class="fas fa-map-marker-alt"></i> City Deep, Johannesburg</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PBSA Logistics. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

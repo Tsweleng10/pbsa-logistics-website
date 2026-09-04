@@ -14,7 +14,7 @@
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="PBSA Logistics" width="150" />
+                <img src="images/logo.png" alt="PBSA Logistics" width="150" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Montserrat;font-weight:700;font-size:1.5rem;color:#D4A843;background:#1A2A3A;padding:8px 20px;border-radius:8px;\'>PBSA Logistics</span>'"/>
             </a>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
@@ -32,14 +32,16 @@
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
+    <!-- Hero with Typewriter -->
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=800&fit=crop'); background-size: cover; background-position: center;">
         <div class="hero-overlay">
             <div class="container hero-content">
-                <h1>Reliable Logistics.<br />Trusted Transport.</h1>
+                <div class="typewriter-container">
+                    <h1 class="typewriter-text">Reliable Logistics. Trusted Transport.</h1>
+                </div>
                 <p class="hero-sub">Level 1 B‑BBEE &bull; RTMS Accredited &bull; 50+ Fleet</p>
                 <div class="hero-buttons">
-                    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+                    <a href="quote.html" class="btn-glow">Get a Quote</a>
                     <a href="services.html" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
@@ -47,7 +49,7 @@
     </section>
 
     <!-- Trust Indicators -->
-    <section class="trust-bar">
+    <section class="trust-bar scroll-reveal">
         <div class="container trust-grid">
             <div class="trust-item">
                 <i class="fas fa-trophy"></i>
@@ -67,25 +69,25 @@
         </div>
     </section>
 
-    <!-- Services Preview -->
+    <!-- Services Preview with Lifted Cards -->
     <section class="services-preview">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-sub">Comprehensive logistics solutions for your business</p>
+            <h2 class="section-title scroll-reveal">Our Services</h2>
+            <p class="section-sub scroll-reveal">Comprehensive logistics solutions for your business</p>
             <div class="service-grid">
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <i class="fas fa-truck"></i>
                     <h3>Freight Transport</h3>
                     <p>Safe and efficient transport for your goods across South Africa.</p>
                     <a href="services.html#freight" class="link-arrow">Learn More →</a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-warehouse"></i>
+                <div class="service-card middle-card scroll-reveal">
+                    <i class="fas fa-warehouse floating"></i>
                     <h3>Warehousing</h3>
                     <p>Secure storage solutions with full inventory management.</p>
                     <a href="services.html#warehousing" class="link-arrow">Learn More →</a>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-reveal">
                     <i class="fas fa-clipboard-list"></i>
                     <h3>Logistics Management</h3>
                     <p>End‑to‑end logistics solutions for your business needs.</p>
@@ -96,10 +98,10 @@
     </section>
 
     <!-- About Preview -->
-    <section class="about-preview">
+    <section class="about-preview scroll-reveal">
         <div class="container about-flex">
             <div class="about-image">
-                <img src="images/placeholder.jpg" alt="PBSA Logistics team" />
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=400&fit=crop" alt="PBSA Logistics team" />
             </div>
             <div class="about-text">
                 <h2>Who We Are</h2>
@@ -110,9 +112,9 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials scroll-reveal">
         <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <p>"PBSA delivered our goods on time and in perfect condition. Highly recommended!"</p>
@@ -130,11 +132,21 @@
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="cta-section scroll-reveal">
+        <div class="container">
+            <h2>Ready to Transport with Us?</h2>
+            <a href="quote.html" class="btn-glow">Get a Quote</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-col">
-                <a href="index.html"><img src="images/logo-white.png" alt="PBSA Logistics" width="150" /></a>
+                <a href="index.html">
+                    <img src="images/logo-white.png" alt="PBSA Logistics" width="150" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Montserrat;font-weight:700;font-size:1.5rem;color:#D4A843;\'>PBSA Logistics</span>'"/>
+                </a>
                 <p class="tagline">Reliable Logistics. Trusted Transport.</p>
             </div>
             <div class="footer-col">
