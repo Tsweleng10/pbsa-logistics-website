@@ -1,4 +1,4 @@
-// ===== HAMBURGER MENU =====
+// HAMBURGER MENU
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 
@@ -14,7 +14,17 @@ if (hamburger) {
     });
 }
 
-// ===== SCROLL REVEAL =====
+// NAVBAR SCROLL EFFECT (Glassmorphism)
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// SCROLL REVEAL
 document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.scroll-reveal');
 
@@ -32,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
 });
 
-// ===== TYPEWRITER (Multiple lines) =====
+// TYPEWRITER (Multiple lines)
 document.addEventListener('DOMContentLoaded', () => {
     const typewriterElement = document.querySelector('.typewriter-text');
     if (!typewriterElement) return;
@@ -76,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
 });
 
-// ===== STAT COUNTER ANIMATION =====
+// STAT COUNTER ANIMATION
 document.addEventListener('DOMContentLoaded', () => {
     const statNumbers = document.querySelectorAll('.stat-number');
 
@@ -106,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach(el => statObserver.observe(el));
 });
 
-// ===== SMOOTH SCROLL =====
+// SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -120,7 +130,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== BACK TO TOP BUTTON =====
+// BACK TO TOP BUTTON
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.createElement('button');
     btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
@@ -140,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// ===== FORM HANDLING =====
+// FORM HANDLING
+
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -171,3 +182,79 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log('🚀 PBSA Logistics Website Loaded Successfully!');
+
+// DYNAMIC TESTIMONIALS
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonials = [
+        {
+            quote: "PBSA delivered our goods on time and in perfect condition. Highly recommended!",
+            author: "John Smith",
+            company: "ABC Trading",
+            rating: 5
+        },
+        {
+            quote: "Professional, reliable, and cost‑effective. They are our go‑to logistics partner.",
+            author: "Mary Molefe",
+            company: "GreenExports",
+            rating: 5
+        },
+        {
+            quote: "The tracking system gave us peace of mind. Excellent service from start to finish.",
+            author: "Peter van der Merwe",
+            company: "Cape Citrus Exporters",
+            rating: 5
+        },
+        {
+            quote: "PBSA Logistics has transformed our supply chain. Their drivers are professional and punctual.",
+            author: "Thabo Nkosi",
+            company: "Mpumalanga Mining",
+            rating: 4
+        },
+        {
+            quote: "We've been using PBSA for 3 years now. Reliable, trustworthy, and always on time.",
+            author: "Sarah Williams",
+            company: "Durban Trading Co.",
+            rating: 5
+        },
+        {
+            quote: "Best logistics company we've worked with. Their real-time tracking is a game-changer.",
+            author: "David Naidoo",
+            company: "KZN Manufacturing",
+            rating: 5
+        }
+    ];
+
+    // Function to shuffle array (Fisher-Yates)
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Get 3 random testimonials
+    function getRandomTestimonials(count = 3) {
+        const shuffled = shuffleArray([...testimonials]);
+        return shuffled.slice(0, count);
+    }
+
+    // Display testimonials
+    function displayTestimonials() {
+        const container = document.querySelector('.testimonial-grid');
+        if (!container) return;
+
+        const selected = getRandomTestimonials(3);
+        
+        container.innerHTML = selected.map(t => `
+            <div class="testimonial-card">
+                <div class="stars">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+                <p>"${t.quote}"</p>
+                <h4>– ${t.author}</h4>
+                <span class="company">${t.company}</span>
+            </div>
+        `).join('');
+    }
+
+    displayTestimonials();
+});
